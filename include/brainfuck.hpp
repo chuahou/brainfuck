@@ -44,11 +44,12 @@ namespace chbrainfuck
          * @brief Pointer to the position on the tape
          * 
          * The tape pointer is represented by the array index to the tape array.
+         * It is initially set to half of the array size.
          */
         int tape_ptr;
 
         /**
-         * @brief Whether to operate with 0 at 0 or 0 at 127.
+         * @brief Whether to operate with 0 at 0 or 0 at 127
          * 
          * Operating with 0 at 127 means that cells are initialized at 127, and
          * comparison operators [ and ] compare to 127 instead of 0. This is
@@ -56,6 +57,14 @@ namespace chbrainfuck
          * [-127, 128].
          */
         bool zero_at_127;
+
+        /**
+         * @brief Checks if the tape pointer is in range
+         * 
+         * @return true tape pointer is in range
+         * @return false tape pointer is out of range
+         */
+        bool check_ptr_valid();
 
     public:
 
