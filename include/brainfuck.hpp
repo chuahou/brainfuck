@@ -158,9 +158,9 @@ namespace chbrainfuck
         void decrement_cell();
 
         /**
-         * @brief Outputs the character in the cell pointed at by the pointer
+         * @brief Returns the character in the cell pointed at by the pointer
          */
-        void print_cell();
+        char get_cell();
 
         /**
          * @brief Inputs a character to the cell pointed at by the pointer

@@ -5,7 +5,6 @@
 
 #include <limits>
 #include <stdexcept>
-#include <cstdio>
 
 #include <brainfuck.hpp>
 
@@ -93,11 +92,11 @@ void Brainfuck::decrement_cell()
     tape[tape_ptr]--;
 }
 
-void Brainfuck::print_cell()
+char Brainfuck::get_cell()
 {
     if (!check_ptr_valid())
         throw std::out_of_range("Invalid tape pointer");
-    printf("%c", tape[tape_ptr]);
+    return tape[tape_ptr];
 }
 
 void Brainfuck::set_cell(char value)
