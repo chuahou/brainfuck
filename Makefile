@@ -5,7 +5,7 @@ LDFLAGS=-g
 
 SRCDIR:=src
 OBJDIR:=obj
-OUTDIR:=lib
+OUTDIR:=bin
 
 DIRS:=$(SRCDIR) $(OBJDIR) $(OUTDIR)
 
@@ -14,7 +14,7 @@ OBJ:=$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 OUT:=$(OUTDIR)/brainfuck
 
 $(OUT): $(OBJ)
-	$(CCC) $< $(LDFLAGS) -o $@
+	$(CCC) $(LDFLAGS) -o $@ $^
 
 $(OBJ): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
 	$(CCC) $(CFLAGS) $(INCLUDES) -c $< -o $@
