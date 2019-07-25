@@ -66,6 +66,13 @@ namespace chbrainfuck
          */
         bool check_ptr_valid();
 
+        /**
+         * @brief Sets all cells to zero
+         * 
+         * Note that this depends on chbrainfuck::Brainfuck::zero_at_127.
+         */
+        void zero_all_cells();
+
     public:
 
         /* constructors and destructor */
@@ -168,6 +175,16 @@ namespace chbrainfuck
          * @param value character to set the cell to
          */
         void set_cell(char value);
+
+        /**
+         * @brief Checks if the character pointed at by the pointer is zero
+         * 
+         * Note that this depends on chbrainfuck::Brainfuck::zero_at_127.
+         * 
+         * @return true 
+         * @return false 
+         */
+        bool is_zero();
 
     };
 
