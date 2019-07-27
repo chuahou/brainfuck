@@ -5,3 +5,6 @@
 
 # ignore docs
 docs/*
+
+# ignore vscode
+.vscode/*
