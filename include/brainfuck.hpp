@@ -16,7 +16,7 @@ namespace chbrainfuck
     /**
      * @brief The default tape size if not specified
      */
-    const int DEFAULT_TAPE_SIZE = 1024;
+    const int DEFAULT_TAPE_SIZE = 30000;
 
     /**
      * @brief The Brainfuck class contains the entire brainfuck interpreter
