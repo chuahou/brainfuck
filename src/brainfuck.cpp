@@ -39,6 +39,16 @@ Brainfuck::Brainfuck(int size, bool zero_at_127) : zero_at_127(zero_at_127)
     zero_all_cells();
 }
 
+Brainfuck::Brainfuck(const Brainfuck& other) : tape_size(other.tape_size),
+    tape_ptr(other.tape_ptr), zero_at_127 (other.zero_at_127)
+{
+    tape = new char[tape_size];
+    for (int i = 0; i < tape_size; i++)
+    {
+        tape[i] = other.tape[i];
+    }
+}
+
 Brainfuck::~Brainfuck()
 {
     delete[] tape;
