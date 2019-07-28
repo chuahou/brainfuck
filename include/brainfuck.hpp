@@ -109,6 +109,15 @@ namespace chbrainfuck
         Brainfuck(int size, bool use_zero_at_127);
 
         /**
+         * @brief Construct a new Brainfuck object from an existing one
+         * 
+         * Copy constructor that performs deep copy of tape.
+         * 
+         * @param other 
+         */
+        Brainfuck(const Brainfuck& other);
+
+        /**
          * @brief Destroy the Brainfuck object
          */
         ~Brainfuck();
