@@ -95,9 +95,9 @@ namespace chbrainfuck
         /**
          * @brief Construct a new CppStringProgram object
          * 
-         * @param program the std::string program
+         * @param _program the std::string program
          */
-        CppStringProgram(std::string program) : program(program) {}
+        CppStringProgram(std::string program) : program(program), index(0) {}
 
     };
 
