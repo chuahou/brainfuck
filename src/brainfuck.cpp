@@ -41,7 +41,7 @@ Brainfuck::Brainfuck(int size, bool zero_at_127) : zero_at_127(zero_at_127)
 
 Brainfuck::~Brainfuck()
 {
-    delete tape;
+    delete[] tape;
 }
 
 // brainfuck operations
