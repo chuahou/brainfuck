@@ -1,0 +1,6 @@
+extraction:
+  cpp:
+    index:
+      build_command:
+        - make setup
+        - make
