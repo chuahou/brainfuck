@@ -21,7 +21,7 @@ Brainfuck::Brainfuck() : tape_size(DEFAULT_TAPE_SIZE), tape_ptr(tape_size / 2),
 
 Brainfuck::Brainfuck(int size) : zero_at_127(false)
 {
-    if (size <= 0 || size > std::numeric_limits<int>::max())
+    if (size <= 0)
         throw std::invalid_argument("Invalid size");
     tape_size = size;
     tape_ptr = tape_size / 2;
@@ -31,7 +31,7 @@ Brainfuck::Brainfuck(int size) : zero_at_127(false)
 
 Brainfuck::Brainfuck(int size, bool zero_at_127) : zero_at_127(zero_at_127)
 {
-    if (size <= 0 || size > std::numeric_limits<int>::max())
+    if (size <= 0)
         throw std::invalid_argument("Invalid size");
     tape_size = size;
     tape_ptr = tape_size / 2;
