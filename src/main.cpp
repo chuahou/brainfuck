@@ -12,10 +12,33 @@ using namespace chbrainfuck;
 
 int main(int argc, char** argv)
 {
-    std::string helloworld =
-        "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.";
+    std::string program;
+    const char* filename = "rdebath_brainfucktest.b";
 
-    CppStringProgram csp(helloworld);
+    // read program
+    FILE* fp = fopen(filename, "r");
+    int c;
+    do
+    {
+        c = fgetc(fp);
+        switch (c)
+        {
+        case '>':
+        case '<':
+        case '+':
+        case '-':
+        case '.':
+        case ',':
+        case '[':
+        case ']':
+            program += (char)c;
+            break;
+        }
+    } while (c != EOF);
+
+    fclose(fp); 
+
+    CppStringProgram csp(program);
     Brainfuck bf;
 
     csp.interpret(bf);
