@@ -49,6 +49,20 @@ Brainfuck::Brainfuck(const Brainfuck& other) : tape_size(other.tape_size),
     }
 }
 
+Brainfuck& Brainfuck::operator=(Brainfuck& rhs)
+{
+    tape_size = rhs.tape_size;
+    tape_ptr = rhs.tape_ptr;
+    zero_at_127 = rhs.zero_at_127;
+    tape = new char[tape_size];
+    for (int i = 0; i < tape_size; i++)
+    {
+        tape[i] = rhs.tape[i];
+    }
+
+    return *this;
+}
+
 Brainfuck::~Brainfuck()
 {
     delete[] tape;
