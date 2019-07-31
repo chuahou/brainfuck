@@ -118,6 +118,14 @@ namespace chbrainfuck
         Brainfuck(const Brainfuck& other);
 
         /**
+         * @brief Assignment operator
+         * 
+         * @param rhs rhs of operator
+         * @return Brainfuck& this created object
+         */
+        Brainfuck& operator=(Brainfuck& rhs);
+
+        /**
          * @brief Destroy the Brainfuck object
          */
         ~Brainfuck();
