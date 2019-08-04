@@ -48,7 +48,6 @@ void Program::interpret(Brainfuck &bf)
                 {
                     next_char();
                 }
-                next_char(); // go past ]
             }
             break;
 
