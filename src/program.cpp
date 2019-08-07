@@ -44,11 +44,20 @@ void Program::interpret(Brainfuck &bf)
         case '[':
             if (bf.is_zero()) // jump to next ]
             {
-                while (get_char() != ']')
+                int leftb_count = 1; // [s encountered - ]s encountered
+                while (leftb_count > 0)
                 {
                     next_char();
+                    switch(get_char())
+                    {
+                    case '[':
+                        leftb_count++;
+                        break;
+                    case ']':
+                        leftb_count--;
+                        break;
+                    }
                 }
-                next_char(); // go past ]
             }
             break;
 

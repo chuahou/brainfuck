@@ -130,7 +130,7 @@ void Brainfuck::set_cell(char value)
 
 bool Brainfuck::is_zero()
 {
-    return (tape[tape_ptr] == (zero_at_127) ? 127 : 0);
+    return (tape[tape_ptr] == ((zero_at_127) ? 127 : 0));
 }
 
 // helper functions
