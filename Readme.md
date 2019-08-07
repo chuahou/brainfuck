@@ -8,6 +8,19 @@ projects. Once again, this badge says it best:
 
 [![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
 
+## Compilation and running
+
+To compile, run the following:
+
+    make setup
+    make
+    
+To run the program, run:
+
+    bin/brainfuck [FILENAME]
+    
+where `[FILENAME]` is the file from which to read the brainfuck program.
+
 ## Doxygen documentation
 
 To generate documentation, enter the repository directory and run:
