@@ -80,7 +80,7 @@ namespace chbrainfuck
         /**
          * @brief Current index to program
          */
-        int index;
+        unsigned int index;
 
     protected:
 

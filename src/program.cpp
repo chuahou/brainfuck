@@ -37,7 +37,7 @@ void Program::interpret(Brainfuck &bf)
 
         case ',':
             char c;
-            scanf("%c", &c);
+            if (!scanf("%c", &c)) exit(-1);
             bf.set_cell(c);
             break;
 
