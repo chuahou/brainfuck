@@ -12,10 +12,20 @@ using namespace chbrainfuck;
 
 int main(int argc, char** argv)
 {
-    std::string program;
-    const char* filename = "rdebath_brainfucktest.b";
+    // get filename from CLI arguments
+    char* filename;
+    if (argc == 2)
+    {
+        filename = argv[1];
+    }
+    else
+    {
+        printf("Expected exactly 1 argument (filename)...\n");
+        return -1;
+    }
 
     // read program
+    std::string program;
     FILE* fp = fopen(filename, "r");
     int c;
     do
