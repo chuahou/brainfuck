@@ -1,11 +1,16 @@
-INCLUDES=-Iinclude
-CCFLAGS=-g -Wall -O3
-CCC=g++
-LDFLAGS=-g
+CXX?=g++
+CPPFLAGS?=-g
+LDFLAGS?=-g
+
+export CXX
+export CPPFLAGS:=$(CPPFLAGS) -Wall -O3
 
 SRCDIR:=src
+HEADERDIR:=include
 OBJDIR:=obj
 OUTDIR:=bin
+
+INCLUDES=$(HEADERDIR:%=-I%)
 
 DIRS:=$(SRCDIR) $(OBJDIR) $(OUTDIR)
 
@@ -13,11 +18,12 @@ SRC:=$(wildcard $(SRCDIR)/*.cpp)
 OBJ:=$(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 OUT:=$(OUTDIR)/brainfuck
 
-$(OUT): $(OBJ)
-	$(CCC) $(LDFLAGS) -o $@ $^
+.PHONY: build setup clean
 
-$(OBJ): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
-	$(CCC) $(CCFLAGS) $(INCLUDES) -c $< -o $@
+build: setup $(OUT)
+
+$(OUT): $(OBJ)
+	$(CXX) $(LDFLAGS) -o $@ $^
 
 setup: $(DIRS)
 
@@ -25,4 +31,7 @@ $(DIRS):
 	mkdir -p $@
 
 clean:
-	rm $(OUTDIR)/* $(OBJDIR)/*
+	rm $(OUTDIR)/* $(OBJDIR)/* || true
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(HEADDERS)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@

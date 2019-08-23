@@ -12,7 +12,6 @@ projects. Once again, this badge says it best:
 
 To compile, run the following:
 
-    make setup
     make
     
 To run the program, run:
@@ -25,4 +24,4 @@ where `[FILENAME]` is the file from which to read the brainfuck program.
 
 To generate documentation, enter the repository directory and run:
 
-```doxygen Doxyfile```
+    doxygen Doxyfile
